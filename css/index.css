@@ -1,0 +1,49 @@
+/* CSS RESET */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: gray;
+  height: 6vh;
+  color: white;
+}
+
+.nav-items {
+  display: flex;
+  list-style-type: none;
+  font-size: 16px;
+}
+
+.nav-items a {
+  text-decoration: none;
+  margin-right: 20px;
+  color: white;
+}
+
+header {
+  height: 8vh;
+  padding: 20px 75px 0px;
+  background-color: gainsboro;
+}
+
+main {
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dashboard > div{
+  margin: 30px auto; 
+}
+
+footer {
+  height: 6vh;
+}
