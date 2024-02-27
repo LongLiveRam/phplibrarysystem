@@ -23,8 +23,14 @@ nav {
 
 .nav-items a {
   text-decoration: none;
-  margin-right: 20px;
+  margin-right: 30px;
   color: white;
+}
+
+.current-page {
+  background: rgb(73, 68, 68);
+  padding: 8px 15px;
+  border-radius: 8px;
 }
 
 header {
@@ -46,4 +52,10 @@ main {
 
 footer {
   height: 6vh;
+  text-align: center;
+  background: gray;
+}
+
+footer h4 {
+  padding: 30px;
 }

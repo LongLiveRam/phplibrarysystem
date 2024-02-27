@@ -1,46 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Library System</title>
-  <link rel="stylesheet" href="css/index.css">
-</head>
-<body>
-  <nav>
-    <div class="logo">
-      <h1>Library Management System</h1>
-    </div>
-    <ul class="nav-items">
-      <li><a href="/">Home</a></li>
-      <li><a href="/">Listed Books</a></li>
-      <li><a href="/">Unlisted Books</a></li>
-      <li><a href="/">Account</a></li>
-    </ul>
-  </nav>
+<?php
+require ('inc/utilities.php');
+require ('inc/router.php');
 
-  <header>
-    <h2>Welcome User</h2> <!-- PHP Global Variable for username -->
-  </header>
 
-  <main>
+require ('model/database.class.php');
 
-    <section class="dashboard">
-      <div>
-        <h3>Books Listed</h3>
-      </div>
-      <div>
-        <h3>Books Sold</h3>
-      </div>
-      <div>
-        <h3>Books Total Stock: </h3>
-      </div>
-    </section>
+$config = require('inc/config.php');
 
-  </main>
+$db = new Database($config['database'], 'root', 'Ramel_PHPServer!');
 
-  <footer>
-    <h4>Copyright @ 2024 Ramel Montera</h4>
-  </footer>
-</body>
-</html>
+$dataFromUsers = $_GET['status'];
+
+//one way of preparing statements with ?
+
+// $query = "SELECT * FROM books where status = ?";
+
+// $db->queryDatabase($query,[$dataFromUsers]);
+
+//one way of preparing statements with named :nameOfVar
+
+$query = "SELECT * FROM books where status = :status";
+
+$response = $db->queryDatabase($query,['status' => $dataFromUsers])->fetchAll();
+
+dieDump($response);
