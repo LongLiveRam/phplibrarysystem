@@ -1,6 +1,6 @@
 <?php 
-  require('view/partials/head.php');
-  require('view/partials/nav.php');
+  require goToPath('view/partials/head.php');
+  require goToPath('view/partials/nav.php');
 ?>
 
   <main>
@@ -21,5 +21,5 @@
   </main>
 
 <?php 
-  require('view/partials/footer.php');
+  require goToPath('view/partials/footer.php');
 ?>

@@ -11,3 +11,14 @@ function dieDump($var) {
 function uriIs($var) {
   return parse_url($_SERVER['REQUEST_URI'])['path'] == $var;
 }
+
+function goToPath($path)
+{
+  return BASE_PATH . $path; // helper function for the router
+}
+
+function loadView($path, $variables = []) 
+{
+  extract($variables);
+  require goToPath('view/' . $path); 
+}
