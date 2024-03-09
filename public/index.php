@@ -4,9 +4,25 @@
 
 const BASE_PATH = __DIR__ . '/../';
 
-require BASE_PATH . 'inc/utilities.php';
+require BASE_PATH . 'Core/utilities.php';
 
-require goToPath('inc/router.php');
+//autoloaders for instantiated classes
+spl_autoload_register(function ($class) {
+
+  $class = str_replace('\\',DIRECTORY_SEPARATOR, $class);
+  require goToPath("{$class}.class.php");
+
+});
+
+$router = new \Core\Router();
+
+require goToPath('Core/routes.php');
+
+$uri = parse_url($_SERVER['REQUEST_URI'])['path'];
+
+$method = $_SERVER['REQUEST_METHOD'];
+
+$router->routeTo($uri, $method);
 
 // require ('model/database.class.php');
 

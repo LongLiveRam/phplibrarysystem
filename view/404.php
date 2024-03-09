@@ -8,7 +8,7 @@
     <section class="dashboard">
       <h3>Page Not Found</h3>
       <p>
-        <a href="/phplibrarysystem/">Go Back Home</a>
+        <a href="/">Go Back Home</a>
       </p>
     </section>
 

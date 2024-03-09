@@ -1,4 +1,9 @@
-<?php
+<?php //database class connection
+
+namespace Core;
+
+use PDO;
+use PDOException;
 class Database {
 
   private $connection;
@@ -13,7 +18,7 @@ class Database {
       echo "Error: {$e->getMessage()}";
     }
   }
-
+  //query database 
   public function queryDatabase($query, $data = [])
   {
 
@@ -28,7 +33,7 @@ class Database {
   {
     return $this->stmt->fetchAll();
   }
-
+  // fetch one row
   public function getOneRow()
   {
     return $this->stmt->fetch();
@@ -40,9 +45,15 @@ class Database {
 
     if(!$response)
     {
-      abort(); //404
+      $this->abort(); //404
     }
 
     return $response;
+  }
+  //abort function/go to 404 page
+  private function abort($val = 404){
+    http_response_code($val);
+    require('../view/404.php');
+    die();
   }
 }
