@@ -45,7 +45,29 @@ main {
   align-items: center;
 }
 
-.dashboard > div{
+.dashboard h3 {
+  margin-bottom: 20px;
+}
+
+.add-books {
+  padding: 5px 9px;
+  margin: auto 0;
+  text-decoration: none;
+  color: black;
+  background-color: burlywood;
+}
+
+table {
+  margin-top: 10px;
+  border: 1px solid black;
+}
+
+table th,
+table td {
+  padding: 15px;
+}
+
+.dashboard > div {
   margin: 30px auto; 
 }
 

@@ -1,5 +1,6 @@
 <?php
 // used for future credentials of database and other API/services connections that need tokens or secret keys or credentials
+// USERNAME = ramel ,PASSWORD = Ramel_PHPServer!
 return [
   'database' =>
   [
