@@ -3,7 +3,6 @@
   require goToPath('view/partials/nav.php');
 ?>
 
-
   <main>
 
     <section class="dashboard">

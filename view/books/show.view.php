@@ -4,16 +4,21 @@
   //view called by the show.controller.php in controllers folder passing $allBooks variable
 ?>
   <main>
-    <section class="dashboard">
-      <h3>Welcome to The View All Books Page</h3>
-      <a href="books/create" class="add-books">Add books</a>
+    <section class="view-books">
+      <div>
+        <a href="books" class="btn">All Books</a>
+        <a href="books?view=listed" class="btn">Listed Books</a>
+        <a href="books?view=unlisted" class="btn">Unlisted Books</a>
+        <a href="books/create" class="btn">Add books</a>
+      </div>
       <table border="1">
         <thead>
-          <caption>Welcome to Ramz Books</caption>
+          <caption>View All Books</caption>
           <th>ISBN</th>
           <th>Title</th>
           <th>Author</th>
           <th>Published</th>
+          <th>Action</th>
         </thead>
         <tbody>
         <?php foreach($allBooks as $row): ?>
@@ -22,7 +27,25 @@
             <td><?= $row['book_name'] ?></td>
             <td><?= $row['book_author'] ?></td>
             <td><?= $row['book_published'] ?></td>
-            <td></td>
+            <td>
+              <form method="POST" action="books/listing">
+                <input type="hidden" name="ISBN" value="<?= $row['ISBN'] ?>">
+
+                <?php 
+                  if($row['book_status'] == 'Unlisted'){
+                ?>
+                <input type="submit" value="Relist" name="_relist">
+                <input type="submit" value="Delete" name="_delete">
+                <?php 
+                  }else{
+                ?>
+                  <input type="hidden" name="_action" value="relist">
+                  <button>Unlist</button>
+                <?php } ?>
+
+              </form>
+              <a href="books/edit?isbn=<?= $row['ISBN'] ?>">Edit</a>
+            </td>
           </tr>
         <?php endforeach ?>
         </tbody>

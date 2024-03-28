@@ -43,18 +43,28 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
+} 
+
+.view-books div {
+  text-align: center;
 }
 
-.dashboard h3 {
-  margin-bottom: 20px;
+.view-books .btn {
+  margin-right: 15px;
+  text-align: center;
 }
 
-.add-books {
+.view-books table {
+  margin-top: 20px; 
+}
+
+.btn {
   padding: 5px 9px;
   margin: auto 0;
   text-decoration: none;
   color: black;
   background-color: burlywood;
+  border-radius: 8px;
 }
 
 table {
