@@ -15,7 +15,7 @@ $db = Services::get(Database::class);
 if(isset($_GET['view']))
 {
   $view = ucfirst($_GET['view']);
-  $response = $db->queryDatabase("SELECT * FROM books WHERE book_status = ?",[
+  $response = $db->queryDatabase("SELECT * FROM books WHERE status = ?",[
     $view
   ])->getAllRow();
 }else{

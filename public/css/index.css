@@ -1,92 +1,204 @@
-/* CSS RESET */
-* {
-  margin: 0;
-  padding: 0;
+/* CSS RESET to the default styling given by the browser so you have full control */
+*,
+*::before,
+*::after {
   box-sizing: border-box;
+}
+* {
+  padding: 0;
+  margin: 0;
+}
+
+/* Custom Styling */
+
+body {
+  background-color: #fafafa;
 }
 
 nav {
   display: flex;
-  justify-content: space-around;
-  align-items: center;
-  background: gray;
   height: 6vh;
-  color: white;
+  align-items: center;
+  justify-content: space-around;
+  -webkit-box-shadow: 0px 9px 6px -7px rgba(0,0,0,0.4);
+  -moz-box-shadow: 0px 9px 6px -7px rgba(0,0,0,0.4);
+  box-shadow: 0px 9px 6px -7px rgba(0,0,0,0.4);
 }
 
 .nav-items {
+  font-size: 20px;
   display: flex;
   list-style-type: none;
-  font-size: 16px;
 }
 
 .nav-items a {
+  display: block;
+  color: black;
+  text-align: center;
   text-decoration: none;
-  margin-right: 30px;
-  color: white;
+  padding: 21px 16px;
 }
 
-.current-page {
-  background: rgb(73, 68, 68);
-  padding: 8px 15px;
-  border-radius: 8px;
+.nav-items .current-page {
+  color: #fafafa;
+  background-color: #008C52;
 }
 
-header {
-  height: 8vh;
-  padding: 20px 75px 0px;
-  background-color: gainsboro;
+main{
+  max-width: 100%;
 }
 
-main {
-  height: 80vh;
+/* FOR THE VIEW ALL BOOKS PAGE */
+
+.view-all-books {
   display: flex;
   justify-content: center;
   align-items: center;
-} 
-
-.view-books div {
-  text-align: center;
+  flex-direction: column;
+  margin-top: 40px;
+  min-width: 90%;
 }
 
-.view-books .btn {
-  margin-right: 15px;
-  text-align: center;
+.all-books-actions {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
 }
 
-.view-books table {
-  margin-top: 20px; 
-}
-
-.btn {
-  padding: 5px 9px;
-  margin: auto 0;
+.all-books-actions a{
   text-decoration: none;
-  color: black;
-  background-color: burlywood;
-  border-radius: 8px;
+  list-style-type: none;
+  color: aliceblue;
+  background-color: #008065;
+  padding: 8px 18px;
+  border-radius: 4px;
 }
 
-table {
-  margin-top: 10px;
-  border: 1px solid black;
+.all-books-actions .selected 
+{
+  text-decoration: underline;
 }
 
-table th,
-table td {
-  padding: 15px;
+/* Listed all books */
+.listed-books-table {
+  border-collapse: collapse;
+  width: 95%;
+  margin: 25px 0;
+  font-size: 0.9em;
+  text-align: left;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+  -webkit-box-shadow: 0px 0px 20px rgba(0,0,0,0.4);
+  -moz-box-shadow: 0px 0px 20px rgba(0,0,0,0.4);
+  box-shadow: 0px 0px 20px rgba(0,0,0,0.4);
 }
 
-.dashboard > div {
-  margin: 30px auto; 
+.listed-books-table thead tr {
+  background-color: #008C52;
+  color: aliceblue;
 }
 
-footer {
-  height: 6vh;
-  text-align: center;
-  background: gray;
+.listed-books-table th,
+.listed-books-table td {
+  padding: 13px 43px;
 }
 
-footer h4 {
-  padding: 30px;
+.listed-books-table tr {
+  border-bottom: 1px #ccc solid;
+}
+
+.listed-books-table tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+.listed-books-table tr:last-of-type {
+  border-bottom: #008C52 solid 3px;
+}
+
+.book-delist,
+.book-delete {
+  padding: 5px 15px;
+  border: none;
+  border-radius: 4px;
+  background-color: #D44B3F;
+  color: aliceblue;
+  cursor: pointer;
+}
+
+.book-edit {
+  padding: 5px 15px;
+  border: none;
+  border-radius: 4px;
+  background-color: #0088C9;
+  color: aliceblue;
+  text-decoration: none;
+}
+
+.book-relist {
+  padding: 5px 15px;
+  border: none;
+  border-radius: 4px;
+  background-color: #008065;
+  color: aliceblue;
+}
+
+/* Add book form */
+
+.add-books {
+  margin: 0 auto;
+  margin-top: 50px;
+  max-width: 20%;
+}
+
+.add-books fieldset {
+  padding: 20px 45px;
+  border-radius: 9px;
+}
+
+.add-books legend {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-left: 20px;
+}
+
+.add-books label, 
+.add-books button{
+  margin-top: 16px;
+  display: block;
+}
+
+.add-books fieldset label:first-child {
+  margin-top: 0;
+}
+
+.add-books label {
+  font-size: 1.2em;
+}
+
+.add-books input{
+  width: 100%;
+  padding: 5px 0px;
+  border-radius: 3px;
+  border: #008C52 solid 1px;
+}
+
+.add-books button {
+  display: inline-block;
+  padding: 11px 6px;
+  border: none;
+  background-color: #2a2d2c;
+  font-size: .9em;
+  font-weight: 600;
+  color: aliceblue;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.add-books .cancel {
+  text-decoration: none;
+  background-color: #D44B3F;
+  color: aliceblue;
+  padding: 11px 7px;
+  font-size: .9em;
+  font-weight: 600;
 }

@@ -8,7 +8,8 @@ function dieDump($var) {
   die();
 }
 // checking URI for the links in NAV (needs to be updated)
-function uriIs($var) {
+function uriIs($var) 
+{
   return parse_url($_SERVER['REQUEST_URI'])['path'] == $var;
 }
 // if server root is defined, make a basepath which is decalted in index.php

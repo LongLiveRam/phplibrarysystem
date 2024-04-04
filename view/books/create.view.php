@@ -5,31 +5,43 @@
 
   <main>
 
-    <section class="dashboard">
-      <h3>Welcome to The List Books Page</h3>
-      <form method="POST" action="/books">
-        <div>
-          <h3>Add Books</h3>
-        </div>
-        <div>
-          <label for="bookName">Book Name:</label>
-          <input type="text" name="bookName" id="bookName">
-        </div>
-        <div>
-          <label for="bookAuthor">Book Author:</label>
-          <input type="text" name="bookAuthor" id="bookAuthor">
-        </div>
-        <div>
-          <label for="datePublished">Date:</label>
-          <input type="date" name="datePublished" id="datePublished">
-        </div>
-        <div>
-          <label for="ISBN">ISBN:</label>
-          <input type="text" name="ISBN" id="ISBN">
-        </div>
-        <button>Add</button>
-        <a href="/books">Back</a>
-      </form>
+    <section class="add-books">
+
+      <fieldset>
+        <legend>List books</legend>
+
+        <form method="POST" action="/books">
+
+          <label for="book_ISBN">ISBN:</label>
+          <input type="text" id="book_ISBN" name="book_ISBN">
+
+          <label for="book_title">Title:</label>
+          <input type="text" id="book_title" name="book_title">
+
+          <label for="book_author">Athor:</label>
+          <input type="text" id="book_author" name="book_author">
+
+          <label for="book_pages">Max Pages:</label>
+          <input type="text" id="book_pages" name="book_pages">
+
+          <label for="date_published">Date Published:</label>
+          <input type="date" id="date_published" name="date_published">
+
+          <label for="book_publisher">Publisher:</label>
+          <input type="text" id="book_publisher" name="book_publisher">
+
+          <label for="book_stock">Stock:</label>
+          <input type="text" id="book_stock" name="book_stock">
+
+          <label for="price">Price:</label>
+          <input type="text" id="price" name="price">
+
+          <button>List Book</button>
+          <a href="/books" class="cancel">Cancel</a>
+        </form>
+
+      </fieldset>
+      
     </section>
 
   </main>

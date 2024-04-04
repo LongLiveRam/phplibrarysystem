@@ -6,8 +6,9 @@
   <section class="dashboard">
     <?= $targetBook[0]['book_author'] ?>
     <h3>Edit Book</h3>
-    <form method="POST" action="/books">
-      <input type="hidden" name="_method" value="EDIT">
+    <form method="POST" action="/books/update">
+      <input type="hidden" name="_method" value="UPDATE">
+      <input type="hidden" name="targetISBN" value="<?= $targetBook[0]['ISBN']?>">
       <div>
         <label for="bookName">Book Name:</label>
         <input type="text" name="bookName" id="bookName" value="<?= $targetBook[0]['book_name'] ?>">

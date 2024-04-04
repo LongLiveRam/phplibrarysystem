@@ -9,7 +9,7 @@ $db = Services::get(Database::class);
 //update the book to unlisted in the database
 if(isset($_POST['_relist']))
 {
-  $db->queryDatabase("UPDATE books SET book_status = 'Listed' WHERE ISBN = ?",[
+  $db->queryDatabase("UPDATE books SET status = 'Listed' WHERE ISBN = ?",[
     $_POST['ISBN']
   ]);
 }
@@ -21,7 +21,7 @@ else if(isset($_POST['_delete']))
 }
 else
 {
-  $db->queryDatabase("UPDATE books SET book_status = 'Unlisted' WHERE ISBN = ?",[
+  $db->queryDatabase("UPDATE books SET status = 'Unlisted' WHERE ISBN = ?",[
     $_POST['ISBN']
   ]);
 }

@@ -11,11 +11,19 @@ $db = Services::get(Database::class);
 //if there's an error make if else here and load create view
 
 //if there's no error execute, redirect, and die script
-$db->queryDatabase('INSERT INTO books (ISBN, book_name, book_author, book_published, book_status) VALUES (?,?,?,?,?)', [
-  $_POST['ISBN'],
-  $_POST['bookName'],
-  $_POST['bookAuthor'],
-  $_POST['datePublished'],
+$price = floatval($_POST['price']);
+$stock = intval($_POST['book_stock']);
+
+$db->queryDatabase('INSERT INTO books (ISBN, book_title, book_author, pages, date_published, publisher, stock, sold, price, status) VALUES (?,?,?,?,?,?,?,?,?,?)', [
+  $_POST['book_ISBN'],
+  $_POST['book_title'],
+  $_POST['book_author'],
+  $_POST['book_pages'],
+  $_POST['date_published'],
+  $_POST['book_publisher'],
+  $_POST['book_stock'],
+  0,
+  $_POST['price'],
   "Listed"
 ]);
 
